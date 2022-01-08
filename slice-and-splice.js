@@ -2,6 +2,7 @@ function frankenstein(arr1, arr2, n){
     //copia o arr2 para a variavel localArray com slice para manter o original intacto
     let localArray = arr2.slice()
     //insere os valores de arr1 no index indicado pelo n
+    //o rest (...) faz com que todos os valores do arr1 sejam passados para o novo array
     localArray.splice(n, 0, ...arr1)
     return localArray
 }
