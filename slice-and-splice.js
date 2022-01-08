@@ -10,7 +10,7 @@ function frankensplice(arr1, arr2, n){
     return localArray
 }
 
-console.log(frankensplice([1,2,3], [4,5,6], 2))
+console.log(frankensplice([1,2,3], [4,5,6], 1))
 
 
 function frankenstein(arr1, arr2, n){
