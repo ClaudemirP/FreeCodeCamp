@@ -142,3 +142,63 @@ duck.eat();
 duck.fly();
 
 //duck.eat() exibe no console a string nom nom nom, e duck.fly() mostra a string I'm flying!.
+
+
+
+//Uma função construtora, ou simplesmente construtor, que herda seu objeto de prototype de uma função construtora de supertipo, além dos métodos herdados, ainda poderá ter seus próprios métodos.
+
+//Por exemplo, Bird é um construtor que herda seu prototype de Animal:
+
+function Animal() { }
+Animal.prototype.eat = function() {
+  console.log("nom nom nom");
+};
+function Bird() { }
+Bird.prototype = Object.create(Animal.prototype);
+Bird.prototype.constructor = Bird;
+
+//Como adicional do que é herdado da classe Animal, você deseja adicionar o comportamento que é único de objetos Bird. Aqui, Bird definirá a função fly(). As funções são adicionadas ao Bird's prototype (protótipo do pássaro) da mesma forma que qualquer função construtora:
+
+Bird.prototype.fly = function() {
+  console.log("I'm flying!");
+};
+
+//Agora as instâncias de Bird terão ambos os métodos, eat() e fly():
+
+let duck = new Bird();
+duck.eat();
+duck.fly();
+
+//duck.eat() exibe no console a string nom nom nom, e duck.fly() mostra a string I'm flying!.
+
+//Sobrescrever métodos herdados
+
+//Nas lições passadas, você aprendeu que um objeto pode herdar seus comportamentos (métodos) de outro objeto ao referenciar o prototype do objeto:
+
+ChildObject.prototype = Object.create(ParentObject.prototype);
+
+//Em seguida, o ChildObject recebeu seu próprio método ao encadear eles neste prototype:
+
+ChildObject.prototype.methodName = function() {...};
+
+//É possível sobrescrever um método herdado. É feito da mesma maneira - ao adicionar o método a ChildObject.prototype utilizando o mesmo nome do método que aquele a ser sobrescrito. Aqui está um exemplo de Bird sobrescrevendo o método eat() herdado de Animal:
+
+function Animal() { }
+Animal.prototype.eat = function() {
+  return "nom nom nom";
+};
+function Bird() { }
+
+Bird.prototype = Object.create(Animal.prototype);
+
+Bird.prototype.eat = function() {
+  return "peck peck peck";
+};
+
+/*Se você tem uma instância let duck = new Bird(); e você chamar duck.eat(), é assim que o JavaScript procura pelo método na cadeia de prototype de duck:
+
+    duck => o método eat() está definido aqui? Não.
+    Bird => o método eat() está definido aqui? => Sim. Execute isso e pare de procurar.
+    Animal => eat() também é definido, mas o JavaScript parou de procurar antes de chegar a este level.
+    Objeto => JavaScript parou de procurar antes de chegar a este nível. */
+
