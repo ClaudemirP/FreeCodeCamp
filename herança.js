@@ -179,7 +179,7 @@ ChildObject.prototype = Object.create(ParentObject.prototype);
 
 //Em seguida, o ChildObject recebeu seu próprio método ao encadear eles neste prototype:
 
-ChildObject.prototype.methodName = function() {...};
+ChildObject.prototype.methodName = function() { };
 
 //É possível sobrescrever um método herdado. É feito da mesma maneira - ao adicionar o método a ChildObject.prototype utilizando o mesmo nome do método que aquele a ser sobrescrito. Aqui está um exemplo de Bird sobrescrevendo o método eat() herdado de Animal:
 
