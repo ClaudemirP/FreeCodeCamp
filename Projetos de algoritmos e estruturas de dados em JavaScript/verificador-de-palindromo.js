@@ -1,11 +1,13 @@
 function palindrome(str) {
     let string = str.split('')
     .filter(item => item != ' ')
-    .join('').replace(/[\W_]/g, '')
+    .join('')
+    .replace(/[\W_]/g, '')
     .toLowerCase()
   
     let reverse = string.split('')
-    .reverse().join('')
+    .reverse()
+    .join('')
     
     return string == reverse;
   }
