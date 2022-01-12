@@ -4,13 +4,14 @@ function telephoneCheck(str) {
 }
 telephoneCheck("555-555-5555")
 
-
+/*
 ^(1\s?)? //primeiro grupo inicia aqui(^) (1\s?)?, digit 1 e um espaço (\s) opcional (?)
 (\d{3}|\(\d{3}\)) //segundo grupo (\d{3}|\(\d{3}\)) 3 digitos ou (|) 3 digitos com parenteses
 [\-\s]? //[\-\s]? hifen e espaço opcionais
 \d{3} //3 digitos
 [\-\s]? //[\-\s]? hifen e espaço opcionais
 \d{4}$ //4 digitos encerra aqui ($)
+*/
 
 
 /*Validador de número de telefone
