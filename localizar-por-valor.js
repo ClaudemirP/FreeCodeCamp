@@ -15,16 +15,9 @@ function whatIsInAName(collection, source) {
 
 //O método every() testa se todos os elementos do array passam pelo teste implementado pela função fornecida.
 
-  /* function whatIsInAName(collection, source) {
-  let arr = [];
-  // Altere apenas o código abaixo desta linha
-  let props = Object.keys(source);
-  arr = collection.filter(obj => 
-    props.every(prop => obj.hasOwnProperty(prop) && obj[prop] === source[prop]
-    ));
+/*Localizar por valor
 
-  // Altere apenas o código acima desta linha
-  return arr;
-}
+Faça uma função que olha através de um array de objetos (primeiro argumento) e retorna um array de todos os objetos que têm pares de nome e valor correspondentes (segundo argumento). Cada par de nome e valor do objeto fonte tem que estar presente no objeto da coleção se ele for ser incluído no array retornado.
 
-whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }); */
+Por exemplo, se o primeiro argumento é [{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], e o segundo argumento é { last: "Capulet" }, em seguida, você deve retornar o terceiro objeto do array (o primeiro argumento), porque contém o nome e o seu valor, que foi passado como segundo argumento.
+*/
